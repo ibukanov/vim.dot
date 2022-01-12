@@ -1,3 +1,6 @@
+" Diable bell
+set belloff=all
+
 set wildmenu
 set colorcolumn=80
 
@@ -31,10 +34,13 @@ map , <C-B>
 " goto buffer
 nnoremap gb :ls<CR>:b<Space>
 
+" terminal customization
+tnoremap <C-W><C-N> <C-W>N
 set autoindent
 
-autocmd BufNewFile
-  \ ~/p/lms/*.php set expandtab tabstop=4 shiftwidth=4 autoindent
+" For now rely on detect indent to do the right thing
+" autocmd BufNewFile
+"  \ ~/p/lms/*.php set expandtab tabstop=4 shiftwidth=4 autoindent
 
 :autocmd BufReadPost * :DetectIndent
 let g:detectindent_preferred_indent = 4
