@@ -20,7 +20,16 @@ set hidden
 " the current diectory.
 set path=.,,**
 
-
+" Move backup/swap away to own directories
+if !isdirectory($HOME."/.local/vim/backup")
+    silent! execute "!mkdir -p ~/.local/vim/backup"
+endif
+if !isdirectory($HOME."/.local/vim/swap")
+    silent! execute "!mkdir -p ~/.local/vim/swap"
+endif
+if !isdirectory($HOME."/.local/vim/undo")
+    silent! execute "!mkdir -p ~/.local/vim/undo"
+endif
 set backupdir=~/.local/vim/backup//
 set directory=~/.local/vim/swap//
 set undodir=~/.local/vim/undo//
